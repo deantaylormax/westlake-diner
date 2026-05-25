@@ -823,6 +823,22 @@ footer a { color: var(--mustard); }
   text-align: center;
   margin: 10px 0 0;
 }
+.powered-by-toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.pbt-label {
+  font-size: 0.75rem;
+  color: var(--tan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.pbt-logo { height: 22px; width: auto; }
 
 .pickup-confirm {
   position: absolute;

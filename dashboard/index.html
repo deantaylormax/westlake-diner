@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Westlake Coffee — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- ===== Auth gate ===== -->
+<div id="auth-gate" class="auth-gate" hidden>
+  <div class="auth-card">
+    <img src="../images/logo-full.png" alt="Westlake Coffee Shop" class="auth-logo" />
+    <h1>Owner dashboard</h1>
+    <p>Sign in to update the website. Changes go live in about 30 seconds.</p>
+    <button id="auth-signin" class="btn-primary">Sign in</button>
+    <p class="auth-note">No account? Ask your site admin to invite you.</p>
+  </div>
+</div>
+
+<!-- ===== Loading ===== -->
+<div id="loading" class="loading-screen">
+  <div class="spinner"></div>
+  <p>Loading…</p>
+</div>
+
+<!-- ===== Dashboard ===== -->
+<div id="app" class="app" hidden>
+  <header class="app-header">
+    <a href="/" class="app-brand">
+      <img src="../images/logo-full.png" alt="Westlake Coffee Shop" />
+    </a>
+    <div class="app-header-right">
+      <a href="/" class="header-link">View site →</a>
+      <span class="header-user" id="header-user"></span>
+      <button id="auth-signout" class="header-link link-button">Sign out</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="app-intro">
+      <h1>What would you like to update?</h1>
+      <p>Click <strong>Save</strong> on any section to publish the change. The live site updates in about 30 seconds.</p>
+    </div>
+
+    <!-- ===== Today's Special ===== -->
+    <section class="card">
+      <header class="card-head">
+        <div>
+          <h2>Today's special</h2>
+          <p class="card-sub">The banner under the storefront photo on the homepage. Keep it short — one line.</p>
+        </div>
+        <span class="card-status" data-card="special"></span>
+      </header>
+      <div class="card-body">
+        <textarea id="field-special" class="field-textarea" rows="2" placeholder="e.g. Today: Eggs Benedict — $18"></textarea>
+        <div class="card-actions">
+          <button class="btn-primary" data-save="special">Save today's special</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Hours ===== -->
+    <section class="card">
+      <header class="card-head">
+        <div>
+          <h2>Hours</h2>
+          <p class="card-sub">Edit the open/close times shown in the Visit section. Use 24-hour format (08:00, 20:00).</p>
+        </div>
+        <span class="card-status" data-card="hours"></span>
+      </header>
+      <div class="card-body">
+        <div id="field-hours" class="hours-grid"></div>
+        <div class="card-actions">
+          <button class="btn-primary" data-save="hours">Save hours</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Menu prices ===== -->
+    <section class="card">
+      <header class="card-head">
+        <div>
+          <h2>Menu prices</h2>
+          <p class="card-sub">Quick price updates. Pick a category, edit prices, save. (Full menu editing — adding/removing items, descriptions — lives at <a href="/admin/" target="_blank">/admin</a>.)</p>
+        </div>
+        <span class="card-status" data-card="prices"></span>
+      </header>
+      <div class="card-body">
+        <label class="field-label">
+          Category
+          <select id="field-category" class="field-select"></select>
+        </label>
+        <div id="field-prices" class="prices-table"></div>
+        <div class="card-actions">
+          <button class="btn-primary" data-save="prices">Save prices</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="app-footer-note">
+      This is the simplified dashboard. For full editing — adding menu items, uploading new photos, changing the family story — go to <a href="/admin/">/admin</a>.
+    </p>
+  </main>
+
+  <!-- ===== Toast notifications ===== -->
+  <div id="toast" class="toast" hidden></div>
+</div>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
