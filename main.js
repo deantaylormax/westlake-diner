@@ -1,5 +1,23 @@
 /* ============ Westlake Coffee — hydration & interactions ============ */
 
+// SYNCHRONOUS: intercept Order Pickup clicks immediately so the tel: fallback
+// never fires while we're waiting for content.json to load.
+// The flag is flipped to false later if pickup_url is a real http URL.
+let __pickupModalEnabled = true;
+document.addEventListener("click", (e) => {
+  if (!__pickupModalEnabled) return;
+  const a = e.target.closest('a[data-bind-attr*="pickup_url"]');
+  if (!a) return;
+  e.preventDefault();
+  const modal = document.getElementById("pickup-modal");
+  if (!modal) return;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  // Tell the async loader to finish rendering the modal contents (idempotent).
+  if (typeof window.__renderPickupModal === "function") window.__renderPickupModal();
+});
+
 (async function () {
   const content = await fetch("content.json", { cache: "no-store" }).then(r => r.json());
 
@@ -256,17 +274,16 @@
     if (confirm) confirm.remove();
   }
 
-  // Intercept clicks on any pickup CTA — open modal unless pickup_url is a real http(s) URL
+  // Disable the synchronous modal intercept if pickup_url is a real http(s) URL —
+  // in that case anchor's native navigation should run.
   const pickupUrl = (content.business && content.business.pickup_url) || "";
-  const useModal = !/^https?:\/\//i.test(pickupUrl);
-  if (useModal) {
-    document.querySelectorAll('a[data-bind-attr*="pickup_url"]').forEach((a) => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        openModal();
-      });
-    });
-  }
+  __pickupModalEnabled = !/^https?:\/\//i.test(pickupUrl);
+
+  // Expose modal rendering so the synchronous click handler at the top can call it.
+  window.__renderPickupModal = () => {
+    if (!menuList.innerHTML) renderMenu();
+    renderCart();
+  };
 
   // Modal interactions
   if (modal) {
