@@ -36,6 +36,11 @@ collections:
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Google Maps embed URL", name: "map_embed_url", widget: "string" }
               - { label: "Parking note", name: "parking_note", widget: "string" }
+              - label: "Pickup ordering URL"
+                name: "pickup_url"
+                widget: "string"
+                hint: "Where the Order Pickup button sends customers. Default is the phone number (tel:+1...). Replace with a Square Online / DoorDash Storefront / Toast URL when set up."
+              - { label: "Pickup short description", name: "pickup_note", widget: "string" }
 
           - label: "Hours (display)"
             name: "hours"

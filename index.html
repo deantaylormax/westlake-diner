@@ -28,7 +28,7 @@
       <li><a href="#story">Our story</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#visit">Visit</a></li>
-      <li><a href="#visit" class="btn">Order online</a></li>
+      <li><a href="tel:+16509925110" data-bind-attr="href:business.pickup_url" class="btn">Order Pickup</a></li>
     </ul>
   </div>
 </nav>
@@ -44,8 +44,8 @@
       <h1>Breakfast, lunch, and dinner — <em>served like family.</em></h1>
       <p class="lede" data-bind="business.tagline">A Daly City diner — breakfast, lunch, and dinner, family-run on Junipero Serra.</p>
       <div class="hero-cta">
-        <a href="#menu" class="btn">See the menu</a>
-        <a href="#visit" class="btn btn-ghost">Order delivery</a>
+        <a href="tel:+16509925110" data-bind-attr="href:business.pickup_url" class="btn">Order Pickup</a>
+        <a href="#menu" class="btn btn-ghost">See the menu</a>
       </div>
     </div>
     <div class="hero-photo" id="hero-photo">
@@ -135,8 +135,13 @@
             <a data-bind-attr="href:business.email;prefix=mailto:"><span data-bind="business.email"></span></a>
           </p>
         </div>
+        <div class="visit-block pickup-block">
+          <h3>Order ahead — pickup</h3>
+          <p class="pickup-note" data-bind="business.pickup_note">Order ahead and skip the wait.</p>
+          <a href="tel:+16509925110" data-bind-attr="href:business.pickup_url" class="btn pickup-btn">Order for Pickup</a>
+        </div>
         <div class="visit-block">
-          <h3>Order online</h3>
+          <h3>Or order delivery</h3>
           <div class="delivery-row" id="delivery-row"></div>
         </div>
         <div class="parking-callout">

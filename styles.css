@@ -492,6 +492,28 @@ section { padding: 96px 0; position: relative; }
   transition: background 0.2s var(--ease);
 }
 .delivery-pill:hover { background: rgba(250,245,235,0.18); text-decoration: none; }
+.pickup-block {
+  background: rgba(217, 164, 65, 0.08);
+  border: 1px solid rgba(217, 164, 65, 0.25);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+.pickup-block h3 { color: var(--mustard); margin-bottom: 8px; }
+.pickup-note {
+  color: rgba(250, 245, 235, 0.85);
+  font-size: 0.98rem;
+  margin: 0 0 16px;
+}
+.pickup-btn {
+  background: var(--mustard);
+  color: var(--espresso);
+  box-shadow: 0 4px 12px rgba(217, 164, 65, 0.3);
+}
+.pickup-btn:hover {
+  background: #e9b757;
+  color: var(--espresso);
+  box-shadow: 0 6px 16px rgba(217, 164, 65, 0.45);
+}
 .parking-callout {
   display: flex;
   align-items: flex-start;

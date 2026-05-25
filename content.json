@@ -10,7 +10,9 @@
     "subtitle": "Diner & Coffee",
     "established": "Family-owned and operated",
     "parking_note": "Free parking in the plaza lot — pull right in.",
-    "email": "westlakecoffee1901@gmail.com"
+    "email": "westlakecoffee1901@gmail.com",
+    "pickup_url": "tel:+16509925110",
+    "pickup_note": "Order ahead and skip the wait — ready when you walk in."
   },
   "hero_photos": [
     "images/hero-storefront.jpg",
