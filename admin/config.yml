@@ -8,9 +8,9 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-site_url: https://westlake-diner.netlify.app
-display_url: https://westlake-diner.netlify.app
-logo_url: /images/logo.svg
+site_url: https://westlake-diner-preview.netlify.app
+display_url: https://westlake-diner-preview.netlify.app
+logo_url: /images/logo-full.png
 
 collections:
   - name: "site"
