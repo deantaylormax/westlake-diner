@@ -95,7 +95,7 @@ collections:
                     widget: "list"
                     fields:
                       - { label: "Item Name", name: "name", widget: "string" }
-                      - { label: "Description", name: "desc", widget: "string" }
+                      - { label: "Description", name: "desc", widget: "string", required: false }
                       - { label: "Price (number only, no $)", name: "price", widget: "string" }
 
           - label: "Delivery services"
