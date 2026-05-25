@@ -100,24 +100,20 @@ section { padding: 96px 0; position: relative; }
   color: var(--espresso);
   text-decoration: none;
 }
-.brand-mark {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: var(--espresso);
-  color: var(--cream);
-  display: grid; place-items: center;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-.brand small {
+.brand-logo {
+  height: 56px;
+  width: auto;
   display: block;
-  font-family: var(--body);
-  font-weight: 400;
-  font-size: 0.75rem;
-  color: var(--tan);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  border-radius: 6px;
+  transition: transform 0.25s var(--ease);
+}
+.brand:hover .brand-logo { transform: scale(1.04) rotate(-1deg); }
+.brand-logo-footer {
+  height: 70px;
+  margin: 0 auto;
+  background: var(--cream);
+  padding: 4px 6px;
+  border-radius: 8px;
 }
 .nav-links {
   display: flex;
