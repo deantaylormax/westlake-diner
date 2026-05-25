@@ -28,35 +28,35 @@
   ],
   "hero_photos": [
     "images/hero-storefront.jpg",
-    "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=1600&q=80",
-    "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1600&q=80",
-    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80"
+    "images/hero-table-spread.jpg",
+    "images/hero-burger-pancakes.jpg",
+    "images/hero-ribeye.jpg"
   ],
   "todays_special": "Today: Rib Eye Steak with mashed potatoes & green salad — $22",
   "what_we_serve": [
     {
       "title": "Breakfast",
       "blurb": "Eggs any style, fluffy pancakes, French toast, chorizo scrambles and a real cup of coffee.",
-      "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=900&q=80",
+      "image": "images/serve-breakfast.jpg",
       "hours": "Daily from 8 am"
     },
     {
       "title": "Lunch",
       "blurb": "Burgers on the griddle, the club, a proper patty melt, Philly cheesesteak, and our reuben.",
-      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80",
+      "image": "images/serve-lunch.jpg",
       "hours": "From 11 am"
     },
     {
       "title": "Dinner",
       "blurb": "Rib eye, grilled salmon, fried chicken, spaghetti & meatballs — Thursday through Sunday evenings.",
-      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80",
+      "image": "images/serve-dinner.jpg",
       "hours": "Thu – Sun until 8 pm"
     }
   ],
   "family_story": {
     "heading": "A neighborhood diner, run by a family.",
     "body": "Westlake Coffee Shop has been the corner where Daly City regulars start their day for years. We're family-owned and operated — the person taking your order in the morning is the same person checking the eggs on the griddle, and probably the same person who'll remember how you like your coffee next time. Pull up a stool at the counter, grab a booth with the kids, or stop in for a quick bite. We're glad you're here.",
-    "image": "images/family-storefront.jpg"
+    "image": "images/family-interior.jpg"
   },
   "menu": {
     "categories": [
