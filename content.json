@@ -2,7 +2,7 @@
   "business": {
     "name": "Westlake Coffee Shop",
     "subtitle": "Diner & Coffee",
-    "tagline": "A Daly City diner — breakfast, lunch, and dinner, family-run on Junipero Serra.",
+    "tagline": "A Daly City diner — eggs, burgers, pupusas, huevos rancheros, and a rib eye for dinner. The kind of place the neighborhood actually eats.",
     "established": "Family-owned and operated",
     "address_line1": "1901 Junipero Serra Blvd, Suite D",
     "address_line2": "Daly City, CA 94014",
@@ -32,48 +32,103 @@
     "images/hero-burger-pancakes.jpg",
     "images/hero-ribeye.jpg"
   ],
-  "todays_special": "Today: Rib Eye Steak with mashed potatoes & green salad — $22",
+  "todays_special": "Today: Huevos Rancheros — eggs, ranchero sauce, avocado, feta, beans, tortilla $16",
   "what_we_serve": [
     {
-      "title": "Breakfast",
-      "blurb": "Eggs any style, fluffy pancakes, French toast, chorizo scrambles and a real cup of coffee.",
+      "title": "Breakfast all day",
+      "blurb": "Egg plates, eleven omelettes, benedicts, pancakes, crepes, huevos rancheros, breakfast latino, loco moco — and pupusas. The full morning lineup.",
       "image": "images/serve-breakfast.jpg",
       "hours": "Daily from 8 am"
     },
     {
       "title": "Lunch",
-      "blurb": "Burgers on the griddle, the club, a proper patty melt, Philly cheesesteak, and our reuben.",
+      "blurb": "Burgers on the griddle, the club, our patty melt, Philly cheesesteak, the special reuben, and big crisp salads.",
       "image": "images/serve-lunch.jpg",
       "hours": "From 11 am"
     },
     {
       "title": "Dinner",
-      "blurb": "Rib eye, grilled salmon, fried chicken, spaghetti & meatballs — Thursday through Sunday evenings.",
+      "blurb": "Rib eye, grilled salmon, fried chicken, spaghetti & meatballs, orange chicken — Thursday through Sunday evenings.",
       "image": "images/serve-dinner.jpg",
       "hours": "Thu – Sun until 8 pm"
     }
   ],
   "family_story": {
     "heading": "A neighborhood diner, run by a family.",
-    "body": "Westlake Coffee Shop has been the corner where Daly City regulars start their day for years. We're family-owned and operated — the person taking your order in the morning is the same person checking the eggs on the griddle, and probably the same person who'll remember how you like your coffee next time. Pull up a stool at the counter, grab a booth with the kids, or stop in for a quick bite. We're glad you're here.",
+    "body": "Westlake Coffee Shop is the corner where Daly City actually eats. Eggs and omelettes in the morning, pupusas at lunch, a Philly cheesesteak when you can't decide, huevos rancheros when you're hungover, a rib eye on Friday night. We're family-owned and operated — the person taking your order is the same person checking the griddle, and probably the same person who'll remember how you like your coffee next time. Pull up to the counter, grab a booth, or stop in for a quick bite. We're glad you're here.",
     "image": "images/family-interior.jpg"
   },
   "menu": {
     "categories": [
       {
-        "name": "Appetizers",
+        "name": "Egg Plates",
         "items": [
-          { "name": "Chicken Tenders & Fries", "desc": "Choice of ranch, honey mustard, or BBQ sauce.", "price": "13" },
-          { "name": "Bacon Cheese Fries", "desc": "", "price": "7" },
-          { "name": "Crispy Breaded Shrimp & Fries", "desc": "Choice of cocktail sauce or ranch.", "price": "15" },
-          { "name": "Chicken Wings (6)", "desc": "BBQ or buffalo, ranch on the side.", "price": "7" }
+          { "name": "Bacon and Eggs", "desc": "Choice of hash browns or home potatoes, and choice of bread.", "price": "17.55" },
+          { "name": "Sausage and Eggs", "desc": "", "price": "17.55" },
+          { "name": "Canadian Bacon & Eggs", "desc": "", "price": "17.55" },
+          { "name": "Ham and Eggs", "desc": "", "price": "17.55" },
+          { "name": "Potatoes and Eggs", "desc": "", "price": "15" },
+          { "name": "Corned Beef Hash and Eggs", "desc": "", "price": "18" },
+          { "name": "Chicken Apple Sausage & Eggs", "desc": "", "price": "17.55" },
+          { "name": "Hamburger Patty & Eggs", "desc": "", "price": "17" },
+          { "name": "Rib-Eye Steak and Eggs", "desc": "", "price": "21" },
+          { "name": "Joe's Special", "desc": "Two scrambled eggs mixed with spinach, mushrooms, and ground beef.", "price": "17" },
+          { "name": "Westlake Special", "desc": "Two poached eggs, bagel with cream cheese, avocado, and fruit. No choice of bread.", "price": "17" },
+          { "name": "Minced Ham & Scrambled Eggs", "desc": "", "price": "16" },
+          { "name": "Shredded Beef & Eggs", "desc": "Mixed with shredded beef, onions, bell peppers, and tomatoes.", "price": "17" },
+          { "name": "Huevos Rancheros", "desc": "Eggs with ranchero sauce, avocado, feta cheese, beans, and tortilla. No potatoes or bread included.", "price": "16" },
+          { "name": "Breakfast Latino", "desc": "Two eggs, fried plantains, casamiento, and sour cream. No potatoes or bread included.", "price": "16" },
+          { "name": "Loco Moco", "desc": "Hamburger patty and two over-easy eggs on rice topped with gravy. No potatoes or bread included.", "price": "17" }
+        ]
+      },
+      {
+        "name": "Omelettes",
+        "items": [
+          { "name": "Cheese Omelette", "desc": "Served with hash browns or home potatoes and choice of bread.", "price": "16" },
+          { "name": "Bacon Cheese Omelette", "desc": "", "price": "18" },
+          { "name": "Sausage Cheese Omelette", "desc": "", "price": "18" },
+          { "name": "Ham Cheese Omelette", "desc": "", "price": "18" },
+          { "name": "Chicken Apple Sausage Omelette", "desc": "Onions, bell peppers, and cheddar.", "price": "17" },
+          { "name": "Chicken Fajita Omelette", "desc": "Onions, bell peppers, cheddar, and salsa.", "price": "17" },
+          { "name": "Steak Omelette", "desc": "Tomatoes, onions, mushrooms, and cheddar.", "price": "18" },
+          { "name": "À la King Omelette", "desc": "Mushrooms, tomatoes, onion, bell peppers, turkey, and Swiss.", "price": "18" },
+          { "name": "Denver Omelette", "desc": "Onion, bell peppers, and ham.", "price": "17" },
+          { "name": "Spinach Cheese Omelette", "desc": "With American cheese on top.", "price": "17" },
+          { "name": "Vegetarian Omelette", "desc": "Tomatoes, onions, bell peppers, mushrooms, and spinach.", "price": "17.50" }
+        ]
+      },
+      {
+        "name": "Benedicts",
+        "items": [
+          { "name": "Eggs Benedict", "desc": "Two poached eggs on an English muffin with Canadian bacon and hollandaise. Served with hash browns or home potatoes and fruit.", "price": "18" },
+          { "name": "Salmon Benedict", "desc": "Two poached eggs on English muffin with smoked salmon and hollandaise.", "price": "22" },
+          { "name": "Eggs Florentine", "desc": "Two poached eggs on English muffin with spinach, fresh tomatoes, and hollandaise.", "price": "18" }
+        ]
+      },
+      {
+        "name": "Pancakes & Crepes",
+        "items": [
+          { "name": "Short Stack of Three Pancakes", "desc": "Add fruit (banana, strawberry, blueberry) for $1.50.", "price": "14" },
+          { "name": "Belgian Waffle", "desc": "", "price": "14" },
+          { "name": "Classic French Toast", "desc": "", "price": "14" },
+          { "name": "Fruit Crepes", "desc": "Three crepes topped with Nutella, strawberry, banana, powdered sugar, and whipped cream.", "price": "16" },
+          { "name": "Pancakes Combo (2×2×2)", "desc": "Two eggs and choice of bacon or pork sausage.", "price": "15" },
+          { "name": "Belgian Waffle Combo (2×2×2)", "desc": "Two eggs and choice of bacon or pork sausage.", "price": "16" },
+          { "name": "French Toast Combo (2×2×2)", "desc": "Two eggs and choice of bacon or pork sausage.", "price": "15" },
+          { "name": "Crepes Combo (2×2×2)", "desc": "Two eggs and choice of bacon or pork sausage.", "price": "16" }
+        ]
+      },
+      {
+        "name": "Pupusas",
+        "items": [
+          { "name": "Pupusa (each)", "desc": "Choice of cheese · beans and cheese · pork and cheese · revuelta (pork, cheese, beans). Add loroco for $0.75 each.", "price": "5" }
         ]
       },
       {
         "name": "Hamburgers",
         "items": [
-          { "name": "Hamburger", "desc": "Classic griddled hamburger.", "price": "13" },
-          { "name": "Cheeseburger", "desc": "Classic with your choice of cheese on top.", "price": "14" },
+          { "name": "Hamburger", "desc": "Classic griddled hamburger. Served with lettuce, tomato, onion, pickles, mayo, and fries (or coleslaw or potato salad).", "price": "13" },
+          { "name": "Cheeseburger", "desc": "Classic with your choice of cheese.", "price": "14" },
           { "name": "Bacon Cheeseburger", "desc": "Topped with two strips of bacon.", "price": "15" },
           { "name": "Mushroom Cheeseburger", "desc": "Topped with grilled mushrooms.", "price": "15" },
           { "name": "Chicken Burger", "desc": "Fried chicken patty.", "price": "14" },
@@ -84,7 +139,7 @@
       {
         "name": "Sandwiches",
         "items": [
-          { "name": "Club Sandwich", "desc": "Bacon, turkey, tomato, lettuce, onion, pickles, mayo and honey mustard on toasted white.", "price": "16" },
+          { "name": "Club Sandwich", "desc": "Bacon, turkey, tomato, lettuce, onion, pickles, mayo, and honey mustard on toasted white.", "price": "16" },
           { "name": "Grilled Cheese", "desc": "Grilled white bread with butter and your choice of cheese.", "price": "13" },
           { "name": "Monte Cristo", "desc": "Ham, turkey, and Swiss on white bread dipped in egg batter.", "price": "16" },
           { "name": "Special Reuben", "desc": "Grilled corned beef, sauerkraut, Swiss, thousand island on rye.", "price": "16" },
@@ -95,7 +150,8 @@
           { "name": "Grilled Chicken Sandwich", "desc": "Grilled chicken, avocado, onions, tomato, mayo on grilled sourdough.", "price": "16" },
           { "name": "Patty Melt", "desc": "Hamburger patty with grilled onions and American cheese on grilled rye.", "price": "16" },
           { "name": "Rib Eye Steak Sandwich", "desc": "Tomato, lettuce, onions, pickles, mayo, honey mustard on a French roll.", "price": "19" },
-          { "name": "Fried Chicken Sandwich", "desc": "Lettuce, tomato, pickles, onions, mayo and coleslaw on top.", "price": "16" }
+          { "name": "Fried Chicken Sandwich", "desc": "Lettuce, tomato, pickles, onions, mayo, and coleslaw.", "price": "16" },
+          { "name": "Deli Sandwich", "desc": "Choice of turkey, ham, tuna salad, chicken salad, or egg salad. Lettuce, tomato, pickles, onions, mayo, and mustard. Fries or coleslaw.", "price": "15" }
         ]
       },
       {
@@ -117,6 +173,30 @@
         ]
       },
       {
+        "name": "Appetizers",
+        "items": [
+          { "name": "Chicken Tenders & Fries", "desc": "Choice of ranch, honey mustard, or BBQ.", "price": "13" },
+          { "name": "Bacon Cheese Fries", "desc": "", "price": "7" },
+          { "name": "Crispy Breaded Shrimp & Fries", "desc": "Choice of cocktail sauce or ranch.", "price": "15" },
+          { "name": "Chicken Wings (6)", "desc": "BBQ or buffalo, ranch on the side.", "price": "7" }
+        ]
+      },
+      {
+        "name": "Sides",
+        "items": [
+          { "name": "Hash Browns / Home Potatoes", "desc": "", "price": "5" },
+          { "name": "French Fries", "desc": "", "price": "5" },
+          { "name": "Sweet Potatoes or Onion Rings", "desc": "", "price": "6" },
+          { "name": "Corned Beef Hash", "desc": "", "price": "6" },
+          { "name": "Bacon, Sausage, or Ham", "desc": "", "price": "4" },
+          { "name": "Fried Plantain", "desc": "", "price": "5" },
+          { "name": "Side of Fruit", "desc": "Bowl of fruit $6.", "price": "4" },
+          { "name": "Avocado", "desc": "Half avocado $2.50.", "price": "5" },
+          { "name": "Oatmeal", "desc": "", "price": "5" },
+          { "name": "Jalapeño", "desc": "", "price": "1" }
+        ]
+      },
+      {
         "name": "Kid's Menu",
         "items": [
           { "name": "Cheeseburger", "desc": "", "price": "11" },
@@ -124,6 +204,41 @@
           { "name": "French Toast", "desc": "", "price": "11" },
           { "name": "Pancakes", "desc": "Choice of chocolate or rainbow sprinkles, with whipped cream and powdered sugar.", "price": "11" },
           { "name": "Spaghetti & Meatball", "desc": "Choice of bacon, sausage, or fruit.", "price": "11" }
+        ]
+      },
+      {
+        "name": "Drinks",
+        "items": [
+          { "name": "House Coffee", "desc": "Free refills.", "price": "3.50" },
+          { "name": "Americano", "desc": "", "price": "4.50" },
+          { "name": "Latte", "desc": "", "price": "5" },
+          { "name": "Cappuccino", "desc": "", "price": "5.50" },
+          { "name": "Mocha", "desc": "", "price": "5.50" },
+          { "name": "Espresso", "desc": "Single $2.75 · Double $4.75.", "price": "2.75" },
+          { "name": "Hot Tea", "desc": "", "price": "3.50" },
+          { "name": "Hot Chocolate", "desc": "", "price": "4.75" },
+          { "name": "Iced Coffee", "desc": "", "price": "5.50" },
+          { "name": "Iced Tea", "desc": "", "price": "5.50" },
+          { "name": "Orange Juice", "desc": "", "price": "5.50" },
+          { "name": "Fresh Squeezed O.J.", "desc": "", "price": "7.50" },
+          { "name": "Apple Juice", "desc": "", "price": "5.50" },
+          { "name": "Cranberry Juice", "desc": "", "price": "5.50" },
+          { "name": "Lemonade", "desc": "", "price": "5.50" },
+          { "name": "Fresh Carrot Juice", "desc": "", "price": "7.50" },
+          { "name": "Fresh Orange & Carrot Juice", "desc": "", "price": "8" },
+          { "name": "Milkshake", "desc": "Chocolate, strawberry, or vanilla.", "price": "7.25" },
+          { "name": "Soda", "desc": "Coke, Pepsi, Sprite, Sunkist, root beer, Diet Coke.", "price": "3.25" },
+          { "name": "Glass of Milk", "desc": "", "price": "4" },
+          { "name": "Chocolate Milk", "desc": "", "price": "5.50" }
+        ]
+      },
+      {
+        "name": "Desserts",
+        "items": [
+          { "name": "Sundae", "desc": "Strawberry, chocolate, or vanilla.", "price": "7.50" },
+          { "name": "Two Scoops of Ice Cream", "desc": "", "price": "6.50" },
+          { "name": "Mini Beignets", "desc": "", "price": "7" },
+          { "name": "Muffin", "desc": "Chocolate, apple, or blueberry.", "price": "5" }
         ]
       }
     ]
