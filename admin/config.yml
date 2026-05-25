@@ -1,0 +1,114 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Local dev only — comment this out before going to production
+# local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://westlake-diner.netlify.app
+display_url: https://westlake-diner.netlify.app
+logo_url: /images/logo.svg
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - file: "content.json"
+        name: "main"
+        label: "Everything on the website"
+        format: "json"
+        fields:
+          - label: "Business info"
+            name: "business"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Tagline (hero subhead)", name: "tagline", widget: "text" }
+              - { label: "Family note", name: "established", widget: "string" }
+              - { label: "Address line 1", name: "address_line1", widget: "string" }
+              - { label: "Address line 2", name: "address_line2", widget: "string" }
+              - { label: "Phone (display)", name: "phone", widget: "string" }
+              - { label: "Phone (digits only, e.g. +16509925110)", name: "phone_link", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Google Maps embed URL", name: "map_embed_url", widget: "string" }
+              - { label: "Parking note", name: "parking_note", widget: "string" }
+
+          - label: "Hours (display)"
+            name: "hours"
+            widget: "list"
+            fields:
+              - { label: "Days", name: "days", widget: "string" }
+              - { label: "Times", name: "times", widget: "string" }
+
+          - label: "Hours (for Open Now badge)"
+            name: "hours_machine"
+            widget: "list"
+            hint: "Used to calculate Open Now / Closed. Day is 0 (Sun) – 6 (Sat). Times are 24h."
+            fields:
+              - { label: "Day of week (0=Sun)", name: "day", widget: "number" }
+              - { label: "Open", name: "open", widget: "string" }
+              - { label: "Close", name: "close", widget: "string" }
+              - { label: "Open (2nd session, optional)", name: "open2", widget: "string", required: false }
+              - { label: "Close (2nd session, optional)", name: "close2", widget: "string", required: false }
+
+          - label: "Hero photos (rotates)"
+            name: "hero_photos"
+            widget: "list"
+            field: { label: "Photo", name: "photo", widget: "image" }
+
+          - label: "Today's special (top banner)"
+            name: "todays_special"
+            widget: "string"
+
+          - label: "What we serve (3 cards)"
+            name: "what_we_serve"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "blurb", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Hours line", name: "hours", widget: "string" }
+
+          - label: "Family story"
+            name: "family_story"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image" }
+
+          - label: "Menu"
+            name: "menu"
+            widget: "object"
+            fields:
+              - label: "Categories"
+                name: "categories"
+                widget: "list"
+                fields:
+                  - { label: "Category Name", name: "name", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Item Name", name: "name", widget: "string" }
+                      - { label: "Description", name: "desc", widget: "string" }
+                      - { label: "Price (number only, no $)", name: "price", widget: "string" }
+
+          - label: "Delivery services"
+            name: "delivery"
+            widget: "list"
+            fields:
+              - { label: "Service name", name: "name", widget: "string" }
+              - { label: "Order link URL", name: "url", widget: "string" }
+
+          - label: "Social links (optional)"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Yelp URL", name: "yelp", widget: "string", required: false }

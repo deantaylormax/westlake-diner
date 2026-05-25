@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Westlake Coffee — Daly City Diner | Breakfast, Lunch & Dinner</title>
+<meta name="description" content="A family-owned Daly City diner serving breakfast, lunch, and dinner on Junipero Serra. Coffee, comfort food, and a counter seat with your name on it." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">W</span>
+      <span>
+        <span data-bind="business.name">Westlake Coffee</span>
+        <small data-bind="business.subtitle">Diner & Coffee Shop</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#serve">What we serve</a></li>
+      <li><a href="#story">Our story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#visit" class="btn">Order online</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow" id="open-now">
+        <span class="dot"></span>
+        <span class="text">Checking hours…</span>
+      </div>
+      <h1>Breakfast, lunch, and dinner — <em>served like family.</em></h1>
+      <p class="lede" data-bind="business.tagline">A Daly City diner — breakfast, lunch, and dinner, family-run on Junipero Serra.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn">See the menu</a>
+        <a href="#visit" class="btn btn-ghost">Order delivery</a>
+      </div>
+    </div>
+    <div class="hero-photo" id="hero-photo">
+      <div class="hero-sticker" data-bind="todays_special">Today's special</div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Marquee ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Fresh coffee, all day</span>
+    <span>Pancakes since sunrise</span>
+    <span>Family owned &amp; operated</span>
+    <span>Free parking out front</span>
+    <span>Daly City regulars welcome</span>
+    <span>Dine in · Pick up · Delivery</span>
+    <span>Fresh coffee, all day</span>
+    <span>Pancakes since sunrise</span>
+    <span>Family owned &amp; operated</span>
+    <span>Free parking out front</span>
+  </div>
+</div>
+
+<!-- ===== What we serve ===== -->
+<section id="serve">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we serve</span>
+      <h2>Three meals, one diner.</h2>
+      <p>Eggs in the morning, burgers at noon, comfort plates at night. Everything made the way you'd hope a neighborhood diner makes it.</p>
+    </div>
+    <div class="serve-grid" id="serve-grid"></div>
+  </div>
+</section>
+
+<!-- ===== Family story ===== -->
+<section class="story" id="story">
+  <div class="container story-grid">
+    <div class="story-photo reveal" id="story-photo"></div>
+    <div class="reveal">
+      <span class="eyebrow" style="color: var(--tomato); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;">Our story</span>
+      <h2 data-bind="family_story.heading" style="margin-top: 12px;">A neighborhood diner, run by a family.</h2>
+      <p data-bind="family_story.body"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Menu ===== -->
+<section id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The menu</span>
+      <h2>Made-from-scratch favorites.</h2>
+      <p>Prices and items change — call us at <a data-bind-attr="href:business.phone_link;prefix=tel:" href="tel:+16509925110"><span data-bind="business.phone">(650) 992-5110</span></a> if you have a question.</p>
+    </div>
+    <div class="menu-tabs" id="menu-tabs"></div>
+    <div id="menu-panels"></div>
+  </div>
+</section>
+
+<!-- ===== Visit ===== -->
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Visit us</span>
+      <h2>Find us on Junipero Serra.</h2>
+    </div>
+    <div class="visit-grid">
+      <iframe class="visit-map reveal" id="visit-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="visit-info reveal">
+        <div class="visit-block">
+          <h3>Address</h3>
+          <p>
+            <span data-bind="business.address_line1"></span><br>
+            <span data-bind="business.address_line2"></span>
+          </p>
+        </div>
+        <div class="visit-block">
+          <h3>Hours</h3>
+          <ul class="hours-list" id="hours-list"></ul>
+        </div>
+        <div class="visit-block">
+          <h3>Contact</h3>
+          <p>
+            <a data-bind-attr="href:business.phone_link;prefix=tel:"><span data-bind="business.phone"></span></a><br>
+            <a data-bind-attr="href:business.email;prefix=mailto:"><span data-bind="business.email"></span></a>
+          </p>
+        </div>
+        <div class="visit-block">
+          <h3>Order online</h3>
+          <div class="delivery-row" id="delivery-row"></div>
+        </div>
+        <div class="parking-callout">
+          <strong style="color: var(--mustard);">P</strong>
+          <span data-bind="business.parking_note"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <a href="#top" class="brand">
+      <span class="brand-mark">W</span>
+      <span data-bind="business.name">Westlake Coffee</span>
+    </a>
+    <p data-bind="business.established">Family-owned and operated</p>
+    <p class="legal">© <span id="year"></span> Westlake Coffee. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
