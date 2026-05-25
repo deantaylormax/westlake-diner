@@ -39,7 +39,7 @@ collections:
               - label: "Pickup ordering URL"
                 name: "pickup_url"
                 widget: "string"
-                hint: "Where the Order Pickup button sends customers. Default is the phone number (tel:+1...). Replace with a Square Online / DoorDash Storefront / Toast URL when set up."
+                hint: "Where the Order Pickup button sends customers. Default is the phone number (tel:+1...). When Toast Online Ordering is enabled, paste the Toast URL here (e.g. https://westlakecoffee.toasttab.com)."
               - { label: "Pickup short description", name: "pickup_note", widget: "string" }
 
           - label: "Hours (display)"

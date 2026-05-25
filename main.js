@@ -308,7 +308,7 @@
       confirm.innerHTML = `
         <div class="pickup-confirm-icon">✓</div>
         <h3>Demo complete</h3>
-        <p>In the live Square Online flow, the customer would now enter their phone number and pay by card. <strong>${itemCount} ${itemCount === 1 ? "item" : "items"} · $${total.toFixed(2)}</strong></p>
+        <p>In the live Toast Online Ordering flow, the customer would now enter their phone number and pay by card, and the order would print on the kitchen ticket printer alongside the dine-in orders. <strong>${itemCount} ${itemCount === 1 ? "item" : "items"} · $${total.toFixed(2)}</strong></p>
         <button class="btn" data-close type="button">Close</button>
       `;
       modal.querySelector(".pickup-modal-panel").appendChild(confirm);
