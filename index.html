@@ -164,6 +164,47 @@
   </div>
 </footer>
 
+<!-- ===== Pickup demo modal (only shown when pickup_url isn't a real http URL) ===== -->
+<div class="pickup-modal" id="pickup-modal" aria-hidden="true" role="dialog">
+  <div class="pickup-modal-overlay" data-close></div>
+  <div class="pickup-modal-panel">
+    <div class="pickup-modal-banner">
+      <strong>Demo preview</strong> — this is what the Square Online pickup ordering page will look like when connected. No real order is placed.
+    </div>
+    <header class="pickup-modal-header">
+      <div>
+        <div class="pickup-modal-title">Order for Pickup</div>
+        <div class="pickup-modal-sub" data-bind="business.name">Westlake Coffee Shop</div>
+      </div>
+      <button class="pickup-modal-close" aria-label="Close" data-close>&times;</button>
+    </header>
+    <div class="pickup-modal-time">
+      <span class="pickup-modal-time-label">Pickup time</span>
+      <div class="pickup-time-pills">
+        <button class="pickup-time-pill active" type="button">Ready in 15 min</button>
+        <button class="pickup-time-pill" type="button">30 min</button>
+        <button class="pickup-time-pill" type="button">Schedule…</button>
+      </div>
+    </div>
+    <div class="pickup-modal-body">
+      <div class="pickup-modal-menu" id="pickup-menu-list"></div>
+      <aside class="pickup-modal-cart">
+        <h4>Your order</h4>
+        <ul class="pickup-cart-list" id="pickup-cart-list">
+          <li class="pickup-cart-empty">Pick a few items to get started.</li>
+        </ul>
+        <div class="pickup-cart-totals">
+          <div><span>Subtotal</span><span id="pickup-subtotal">$0.00</span></div>
+          <div><span>Tax (est. 9.875%)</span><span id="pickup-tax">$0.00</span></div>
+          <div class="total"><span>Total</span><span id="pickup-total">$0.00</span></div>
+        </div>
+        <button class="btn pickup-checkout-btn" id="pickup-checkout" type="button" disabled>Continue to Checkout</button>
+        <p class="pickup-cart-footnote">Pay with card on the next step · Pickup in-store, no delivery fee.</p>
+      </aside>
+    </div>
+  </div>
+</div>
+
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
   // Auto-redirect to /admin after logging in via an invite/recovery link

@@ -162,6 +162,163 @@
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
+  // ---- Pickup demo modal ----
+  // Curated "featured" subset of the menu for the demo cart UI
+  const featuredItems = [
+    { section: "Most ordered", name: "Westlake Special", desc: "Two poached eggs, bagel with cream cheese, avocado, fruit.", price: 17 },
+    { section: "Most ordered", name: "Huevos Rancheros", desc: "Eggs, ranchero sauce, avocado, feta, beans, tortilla.", price: 16 },
+    { section: "Most ordered", name: "Cheeseburger", desc: "Classic with your choice of cheese, fries included.", price: 14 },
+    { section: "Most ordered", name: "Short Stack Pancakes", desc: "Three buttermilk pancakes, butter, syrup.", price: 14 },
+    { section: "Breakfast", name: "Bacon and Eggs", desc: "Hash browns or home potatoes, choice of bread.", price: 17.55 },
+    { section: "Breakfast", name: "Eggs Benedict", desc: "Poached eggs, Canadian bacon, hollandaise.", price: 18 },
+    { section: "Breakfast", name: "Denver Omelette", desc: "Onion, bell peppers, ham.", price: 17 },
+    { section: "Lunch", name: "Patty Melt", desc: "Hamburger patty, grilled onions, American cheese on rye.", price: 16 },
+    { section: "Lunch", name: "Philly Cheesesteak", desc: "Onions, peppers, mushrooms, cheese on French roll.", price: 17 },
+    { section: "Lunch", name: "Club Sandwich", desc: "Bacon, turkey, tomato, lettuce, mayo, honey mustard.", price: 16 },
+    { section: "Drinks", name: "Latte", desc: "Hot or iced.", price: 5 },
+    { section: "Drinks", name: "Fresh Squeezed O.J.", desc: "", price: 7.5 }
+  ];
+
+  const modal = document.getElementById("pickup-modal");
+  const menuList = document.getElementById("pickup-menu-list");
+  const cartList = document.getElementById("pickup-cart-list");
+  const subEl = document.getElementById("pickup-subtotal");
+  const taxEl = document.getElementById("pickup-tax");
+  const totEl = document.getElementById("pickup-total");
+  const checkoutBtn = document.getElementById("pickup-checkout");
+  const cart = new Map(); // name -> {item, qty}
+
+  function renderMenu() {
+    let html = "";
+    let lastSection = null;
+    featuredItems.forEach((it, i) => {
+      if (it.section !== lastSection) {
+        html += `<div class="pickup-menu-section">${it.section}</div>`;
+        lastSection = it.section;
+      }
+      html += `
+        <div class="pickup-menu-item">
+          <div class="pickup-menu-item-info">
+            <p class="pickup-menu-item-name">${it.name}</p>
+            ${it.desc ? `<p class="pickup-menu-item-desc">${it.desc}</p>` : ""}
+          </div>
+          <div class="pickup-menu-item-right">
+            <span class="pickup-menu-item-price">$${it.price.toFixed(2)}</span>
+            <button class="pickup-add-btn" data-idx="${i}" aria-label="Add ${it.name}">+</button>
+          </div>
+        </div>`;
+    });
+    menuList.innerHTML = html;
+  }
+
+  function renderCart() {
+    if (cart.size === 0) {
+      cartList.innerHTML = `<li class="pickup-cart-empty">Pick a few items to get started.</li>`;
+      checkoutBtn.disabled = true;
+    } else {
+      cartList.innerHTML = "";
+      cart.forEach((entry) => {
+        const li = document.createElement("li");
+        li.className = "pickup-cart-item";
+        li.innerHTML = `
+          <div class="pickup-cart-qty">
+            <button data-act="dec" data-name="${entry.item.name}">−</button>
+            <span>${entry.qty}</span>
+            <button data-act="inc" data-name="${entry.item.name}">+</button>
+          </div>
+          <span class="pickup-cart-name">${entry.item.name}</span>
+          <span class="pickup-cart-price">$${(entry.item.price * entry.qty).toFixed(2)}</span>
+        `;
+        cartList.appendChild(li);
+      });
+      checkoutBtn.disabled = false;
+    }
+    let subtotal = 0;
+    cart.forEach((entry) => { subtotal += entry.item.price * entry.qty; });
+    const tax = subtotal * 0.09875;
+    subEl.textContent = `$${subtotal.toFixed(2)}`;
+    taxEl.textContent = `$${tax.toFixed(2)}`;
+    totEl.textContent = `$${(subtotal + tax).toFixed(2)}`;
+  }
+
+  function openModal() {
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (!menuList.innerHTML) renderMenu();
+    renderCart();
+  }
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    const confirm = modal.querySelector(".pickup-confirm");
+    if (confirm) confirm.remove();
+  }
+
+  // Intercept clicks on any pickup CTA — open modal unless pickup_url is a real http(s) URL
+  const pickupUrl = (content.business && content.business.pickup_url) || "";
+  const useModal = !/^https?:\/\//i.test(pickupUrl);
+  if (useModal) {
+    document.querySelectorAll('a[data-bind-attr*="pickup_url"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+  }
+
+  // Modal interactions
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target.matches("[data-close]")) closeModal();
+      const addBtn = e.target.closest(".pickup-add-btn");
+      if (addBtn) {
+        const it = featuredItems[+addBtn.dataset.idx];
+        const entry = cart.get(it.name) || { item: it, qty: 0 };
+        entry.qty += 1;
+        cart.set(it.name, entry);
+        renderCart();
+      }
+      const qtyBtn = e.target.closest(".pickup-cart-qty button");
+      if (qtyBtn) {
+        const name = qtyBtn.dataset.name;
+        const entry = cart.get(name);
+        if (!entry) return;
+        if (qtyBtn.dataset.act === "inc") entry.qty += 1;
+        else entry.qty -= 1;
+        if (entry.qty <= 0) cart.delete(name);
+        else cart.set(name, entry);
+        renderCart();
+      }
+      const pill = e.target.closest(".pickup-time-pill");
+      if (pill) {
+        modal.querySelectorAll(".pickup-time-pill").forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+      }
+    });
+
+    checkoutBtn.addEventListener("click", () => {
+      let total = 0;
+      cart.forEach((entry) => { total += entry.item.price * entry.qty; });
+      total *= 1.09875;
+      const itemCount = Array.from(cart.values()).reduce((a, b) => a + b.qty, 0);
+      const confirm = document.createElement("div");
+      confirm.className = "pickup-confirm show";
+      confirm.innerHTML = `
+        <div class="pickup-confirm-icon">✓</div>
+        <h3>Demo complete</h3>
+        <p>In the live Square Online flow, the customer would now enter their phone number and pay by card. <strong>${itemCount} ${itemCount === 1 ? "item" : "items"} · $${total.toFixed(2)}</strong></p>
+        <button class="btn" data-close type="button">Close</button>
+      `;
+      modal.querySelector(".pickup-modal-panel").appendChild(confirm);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+  }
+
   // ---- Mobile nav ----
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector(".nav-links");
